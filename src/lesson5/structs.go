@@ -18,4 +18,8 @@ func main() {
 
 	fmt.Println(p1.name)
 
+	p2 := Person{name: "Lizzie", age: 29, pet: false}
+
+	fmt.Println(p2)
+
 }
