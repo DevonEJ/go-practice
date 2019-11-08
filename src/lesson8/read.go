@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// Ask user for filename
-	fmt.Println("Please enter the filename (Hint: it's file.txt): ")
+	fmt.Println("Please enter the filename: ")
 	var fileName string
 	fmt.Scan(&fileName)
 
