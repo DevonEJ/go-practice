@@ -1,6 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
 
 /*
 Swap takes an index and a slice of integers, and swaps the order of the value at the given index, with the value
@@ -61,11 +67,24 @@ func BubbleSort(numbers []int) {
 func main() {
 
 	// Define and retrieve user input - slice of integers
-	var unsortedNumbers []int
+	unsortedNumbers := []int{}
 
-	fmt.Println("Please enter up to 10 integers separate by a space: ")
+	fmt.Println("Please enter your numbers, separated by spaces, then hit Enter to sort them: ")
 
-	fmt.Scan(&unsortedNumbers)
+	// Get user input as a string of space separated numbers
+	reader := bufio.NewReader(os.Stdin)
+	stringNumbers, _ := reader.ReadString('\n')
+
+	// Remove new line character from user input string
+	stringNumbers = strings.TrimSuffix(stringNumbers, "\n")
+
+	// Split user string into individual numbers, and convert to ints for sorting
+	splitString := strings.Split(stringNumbers, " ")
+
+	for _, val := range splitString {
+		intVal, _ := strconv.Atoi(val)
+		unsortedNumbers = append(unsortedNumbers, intVal)
+	}
 
 	// Apply bubble sort
 	BubbleSort(unsortedNumbers)
