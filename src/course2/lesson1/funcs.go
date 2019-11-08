@@ -20,4 +20,6 @@ func main() {
 
 	fmt.Println(isEven(5))
 
+	fmt.Println(isEven(10))
+
 }
