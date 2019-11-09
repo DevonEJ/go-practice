@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -26,8 +27,8 @@ func main() {
 	personMap := make(map[string]string)
 
 	// Add details
-	personMap["name"] = inputName
-	personMap["address"] = inputAddr
+	personMap["name"] = strings.ReplaceAll(inputName, "\n", "")
+	personMap["address"] = strings.ReplaceAll(inputAddr, "\n", "")
 
 	// Convert map to JSON object
 	bObject, err := json.Marshal(personMap)
@@ -36,6 +37,6 @@ func main() {
 		fmt.Println("There was an error converting map to JSON object.")
 	}
 
-	fmt.Printf("Here is the JSON object: \n %v", bObject)
+	fmt.Printf("Here is the JSON object: \n %v", string(bObject))
 
 }
