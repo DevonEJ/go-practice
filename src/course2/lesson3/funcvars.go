@@ -28,7 +28,7 @@ func main() {
 	*/
 	runFuncs(funcVar, 8)
 
-	// runFunc using an anonymous (lambda) function
+	// runFunc using an anonymous (lambda) function - pass the function, and the argument for it to be executed with
 	runFuncs(func(x int) { fmt.Println(x * 2) }, 2)
 
 }
