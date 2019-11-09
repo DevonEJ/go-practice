@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-// Define a new type called SpecialInt
+//SpecialInt - Define a new receiver type called SpecialInt
 type SpecialInt int
 
-// Create a method for SpecialInt
+//Increment -  Create a method for SpecialInt
 func (si SpecialInt) Increment() int {
 	return int(si + 1)
 }
