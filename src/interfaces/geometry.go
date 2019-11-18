@@ -39,13 +39,17 @@ func (c circle) perim() float64 {
 	return 2 * math.Pi * c.radius
 }
 
-// Helper functions take the interface as argument - making use of the method that is defined for the correct type
-func measureArea(g geometry) {
+/* Helper functions take the interface as argument
+- making use of the method that is defined for the correct type */
+
+//MeasureArea is a helper function, allowing use of geometry interface with shape types
+func MeasureArea(g geometry) {
 	// Call area on whichever type is being operated on
 	fmt.Println(g.area())
 }
 
-func measurePerim(g geometry) {
+//MeasurePerim is a helper function, allowing use of geometry interface with shape types
+func MeasurePerim(g geometry) {
 	fmt.Println(g.perim())
 }
 
@@ -57,9 +61,9 @@ func main() {
 	circ := circle{radius: 10}
 
 	// Apply measure helper function to the rec instance
-	measureArea(rec)
+	MeasureArea(rec)
 
 	// Apply measure helper function to the rec instance
-	measurePerim(circ)
+	MeasurePerim(circ)
 
 }
